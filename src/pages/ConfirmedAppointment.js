@@ -1,7 +1,7 @@
 import { checkToken } from "../utilities/users-service";
 
 
-function OrderHistoryPage() {
+function confirmedAppointment() {
 
   const handleCheckToken = async () => {
     const expDate = await checkToken();
@@ -10,7 +10,7 @@ function OrderHistoryPage() {
 
   return (
     <div>
-      <h1>OrderHistoryPage</h1>
+      <h1>Confirmed Appointment</h1>
       <button onClick={handleCheckToken}>
         Check When My Login Token Expires
       </button>
@@ -18,4 +18,4 @@ function OrderHistoryPage() {
   );
 }
 
-export default OrderHistoryPage;
+export default confirmedAppointment;

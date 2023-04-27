@@ -2,9 +2,9 @@ import {useState} from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 
-import NewOrderPage from './pages/NewOrderPage';
+import NewAppointment from './pages/NewAppointment';
 import AuthPage from './pages/AuthPage';
-import OrderHistoryPage from './pages/OrderHistoryPage';
+import ConfirmedAppointment from './pages/ConfirmedAppointment';
 import NavBar from './components/NavBar';
 
 import { getUser } from './utilities/users-service';
@@ -20,8 +20,8 @@ function App() {
       <>
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route path='/orders/new' element={ <NewOrderPage /> }/>
-        <Route path='/orders' element={ <OrderHistoryPage /> }/>
+        <Route path='/scheduleAppointment/new' element={ <NewAppointment /> }/>
+        <Route path='/confirmedAppointment' element={ <ConfirmedAppointment /> }/>
       </Routes>
       </>
      : 

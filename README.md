@@ -1,16 +1,37 @@
-Using mern-infrastructureto Create MERN-Stack Projects in the Future
-Here's the process to create a new MERN-Stack project that starts with the infrastructure code:
+# **About the project:**
 
-Clone the mern-infrastructure repo: git clone <url of mern-infrastructure> <name-of-project>
+It's an app for scheduling appointment with doctor's. All the doctor's with different specialization are going to be on the App. Anyone after signing can schedule an appointment with the doctors. In which every person have their own personal information page. 
 
-Note that the folder created will be same as <name-of-project>instead of mern-infrastructure
 
-cd <name-of-project>
-Install the Node modules: npm i
-Create a .env (touch .env) and add entries for DATABASE_URLand SECRET
-Update the "name": "mern-infrastructure"in package.json to the name of your project.
-Create a new repo on your personal GH account.
-Copy the new GH repo's URL.
-Update the remote's URL: git remote set-url origin <paste the copied GH url>
-Push for the first time: git push -u origin main
-Have fun coding your new project and don't forget to make frequent commits!
+## ** Built With: **
+
+1. ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+2. ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+3. ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+4. ![MERN] ( )
+
+5. [!Figma] ( )
+
+6. [!Bootstrap] ( )
+
+
+## ** Usage: **
+
+Ability to bring all the doctor's from the near by location and from all the hospital on the same database so that it will be easy for anyone to check in the Insurance and book an appointment. Check all the doctor's from the near by location and schedule an appointment directly with them. 
+
+
+## **Author and contact:**
+
+B_Nagarkoti;
+indu.ghugtyal@gmail.com
+
+
+## **Acknowledgment**
+
+### My Instructors: Abraham E. Tavarez, Colton Wright, Laura Minaya
+  
+
+
