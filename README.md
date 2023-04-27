@@ -2,6 +2,14 @@
 
 It's an app for scheduling appointment with doctor's. All the doctor's with different specialization are going to be on the App. Anyone after signing can schedule an appointment with the doctors. In which every person have their own personal information page. 
 
+## Wireframe of the Project:
+
+![LogIn](./src/assests/LogIn.png)
+![Home Page](./src/assests/HomePage.png)
+![Speciality Page](./src/assests/Speciality.png)
+![Doctors Information](./src/assests/DoctorsInfo.png)
+![Personal Details](./src/assests/Personal%20Details.png)
+![Cofirmation Page](./src/assests/Cofirmation.png)
 
 ## ** Built With: **
 
