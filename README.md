@@ -11,6 +11,13 @@ It's an app for scheduling appointment with doctor's. All the doctor's with diff
 ![Personal Details](./src/assests/Personal%20Details.png)
 ![Cofirmation Page](./src/assests/Cofirmation.png)
 
+## ** Trello: Work Tracker**
+![Trello](https://trello.com/b/SZOkYOKD/app-project)
+
+
+## ** ERD:
+![ERD](./src/assests/ERD.png)
+
 ## ** Built With: **
 
 1. ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -39,7 +46,8 @@ indu.ghugtyal@gmail.com
 
 ## **Acknowledgment**
 
-### My Instructors: Abraham E. Tavarez, Colton Wright, Laura Minaya
+### My Instructors: Abraham E. Tavarez and Colton Wright
+
   
 
 

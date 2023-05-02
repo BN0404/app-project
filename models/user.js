@@ -21,12 +21,18 @@ const userSchema = new Schema({
     minLength: 5,
     required: true,
   },
+  address: { type: String, required: true },
+
+  phone:{ type: String, required: false},
+
 }, {
     timestamps: true,
     toJSON: function(doc, ret) {
         delete ret.password;
         return ret;
-    }
+  },
+    
+    
 });
 
 //* Pre Hook

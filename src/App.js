@@ -1,15 +1,17 @@
 import {useState} from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
-import NewAppointment from './pages/NewAppointment';
+// import NewOrderPage from './pages/NewOrderPage';
 import AuthPage from './pages/AuthPage';
-import ConfirmedAppointment from './pages/ConfirmedAppointment';
+// import OrderHistoryPage from './pages/OrderHistoryPage';
 import NavBar from './components/NavBar';
-
+import DoctorPage from './pages/DoctorPage';
+import SpecialistPage from './pages/SpecialistPage';
 import { getUser } from './utilities/users-service';
 
 import './App.css';
+import NewDoctorFormPage from './pages/NewDoctorFormPage';
+
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -20,8 +22,12 @@ function App() {
       <>
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route path='/scheduleAppointment/new' element={ <NewAppointment /> }/>
-        <Route path='/confirmedAppointment' element={ <ConfirmedAppointment /> }/>
+        {/* <Route path='/orders/new' element={ <NewOrderPage /> }/>
+            <Route path='/orders' element={<OrderHistoryPage />} /> */}
+            <Route path='/specialist' element={<SpecialistPage />} />
+            <Route path='/doctor' element={<DoctorPage />} />
+            <Route path='/doctors/new' element={<NewDoctorFormPage/>}/>
+            
       </Routes>
       </>
      : 

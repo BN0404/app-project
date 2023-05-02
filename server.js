@@ -27,6 +27,8 @@ app.use(require('./config/checkToken'));
 // * All other routes
 app.use('/api/users', require('./routes/api/users'));
 
+app.use('/api/doctors', require('./routes/api/doctors'));
+
 
 
 // Put API routes here, before the "catch all" route
@@ -35,6 +37,7 @@ app.use('/api/users', require('./routes/api/users'));
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
+
 
 
 app.listen(PORT, () => {

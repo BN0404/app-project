@@ -8,12 +8,12 @@ function NavBar({ user, setUser }) {
   };
   return (
     <nav>
-      <Link to="/appointment">Order History</Link>
+      <Link to="/speciality">Specialist</Link>
       &nbsp; | &nbsp;
-      <Link to="/scheduleAppointment/new">New Order</Link> <span>Welcome, {user.name}</span>{" "}
+      <Link to="/doctor">Doctor</Link> <span>Welcome, {user.name}</span>{" "}
       <Link to="" onClick={handleLogOut}>
         Logout
-      </Link>
+      </Link> 
     </nav>
   );
 }
