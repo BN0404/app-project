@@ -9,19 +9,22 @@ function NewDoctorFormPage() {
     return (
       <div>
             <button onClick={getDocData}> Get all the Doc's </button>
-            <form> 
+            <form action='/doctors/new' method='POST'> 
 <h2> Doc Login</h2>
                 <div>
-                    <label>
+                   
                         Name: 
-                        <input type="text" value="" />
-                    </label>
-                        <label>
+                        <input type="text" name="name" />
+                        <br/>
+                    
                         Speciality:
-                            <input type="text" value=""/>
+                        <input type="text" name="name" />
+                        <br/>
+                    
+                        <input type='submit' value="Add new Doc"/>
                         
-                    </label>
-
+                    
+{/* <button onClick={}> Add the Doc</button> */}
 </div>
             </form>
                
