@@ -6,7 +6,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 import { get } from 'mongoose';
 import {addUser, getUsers, getUser, editUser} from 
 router.post('/', doctorsCtrl.create);
-import { deleteUser, editUser } from '../../src/utilities/doctorform-api';
+import { deleteUser, editUser } from '../../src/utilities/doctorForm-api';
 
 router.post('/add', addUser);
 router.get('/', doctorsCtrl.index);

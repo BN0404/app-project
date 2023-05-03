@@ -6,10 +6,10 @@
 //     </div>
 //   );
 // }
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Table, TableBody, TableHead, TableRow, TableCell,styled, Button } from "@mui/material"
 
-import { getUsers, deleteUser} from "../utilities/doctorform-api"
+import { getUsers, deleteUser} from "../utilities/doctorForm-api"
 
 import { Link } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ const TRow = styled(TableRow)`
 const AllUsers = () => {
     const [users, setUsers] = useState([]);
     
-    useEffect(() => {
+useEffect(() => {
         getAllUsers();
     }, []);
 

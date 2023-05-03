@@ -49,7 +49,7 @@ import { useState, useEffect } from 'react';
 
 import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getUsers, editUser } from '../utilities/doctorform-api';
+import { getUsers, editUser } from "../utilities/doctorForm-api";
 
 const initialValue = {
     name: '',
@@ -108,7 +108,7 @@ const EditUser = () => {
             </FormControl>
             
             <FormControl>
-                <Button variant="contained" color="primary" onClick={() => editUserDetails()}>Edit User</Button>
+                <Button variant="contained" color="primary" onClick={() => editUserDetails()}>Edit</Button>
             </FormControl>
         </Container>
     )
