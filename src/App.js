@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import DoctorPage from './pages/DoctorPage';
 import SpecialistPage from './pages/SpecialistPage';
 import { getUser } from './utilities/users-service';
-
+import EditDoc from './pages/EditDoc';
 import './App.css';
 import NewDoctorFormPage from './pages/NewDoctorFormPage';
 
@@ -27,6 +27,7 @@ function App() {
             <Route path='/specialist' element={<SpecialistPage />} />
             <Route path='/doctor' element={<DoctorPage />} />
             <Route path='/doctors/new' element={<NewDoctorFormPage/>}/>
+            <Route path='/edit/:id' element={<EditDoc />} />
             
       </Routes>
       </>

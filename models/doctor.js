@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+import autoIncrement from 'mongoose-auto-increment'
 const doctorSchema = new Schema({
     name: { type: String, required: true },
    
@@ -11,10 +11,10 @@ const doctorSchema = new Schema({
     //     required: true
     // },
    
-    // hospital: {
-    //     type: String,
-    //     required: true
-    // },
+    hospital: {
+        type: String,
+        required: true
+    },
 
     scheduleAnAppointment: {
     type: Date
@@ -28,4 +28,7 @@ const doctorSchema = new Schema({
 }
 )
 
-module.exports = mongoose.model('Doctor', doctorSchema);
+autoIncrement.initialize(mongoose.connection);
+userSchema.plugin(autoIncrement.plugin, 'user');
+
+module.exports = mongoose.model('User', doctorSchema);
