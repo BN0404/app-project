@@ -41,7 +41,7 @@ import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button }
 import { useNavigate } from 'react-router-dom';
 
 import { addUser } from "../utilities/doctorForm-api";
-import { getUser } from '../utilities/users-service';
+// import { getUser } from '../utilities/users-service';
 
 const Container = styled(FormGroup)`
 width :70%;
