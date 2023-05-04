@@ -41,6 +41,7 @@ import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button }
 import { useNavigate } from 'react-router-dom';
 
 import { addUser } from "../utilities/doctorForm-api";
+import { getUser } from '../utilities/users-service';
 
 const Container = styled(FormGroup)`
 width :70%;
@@ -52,11 +53,9 @@ margin: 10% auto auto auto;
 
 const defaultValue ={
     name: '',
-    Speciality: '',
-    Hospital: ''
+    specialty: '',
+    hospital: ''
 }
-
-
 
 const NewDoctorFormPage = () => {
     const [ user, setUser ] = useState(defaultValue);
@@ -66,7 +65,10 @@ const NewDoctorFormPage = () => {
         console.log(user)
     }
     const addUserDetails = async () => {
-        await addUser(user);
+        console.log(user)
+        const doc = await addUser(user)
+        // await addUser(user);
+        console.log(doc)
         navigate('/all')
     }
 
@@ -76,16 +78,16 @@ const NewDoctorFormPage = () => {
             <Typography variant="h4"> Add Doctor</Typography>
             <FormControl>
             <InputLabel> Name:</InputLabel>
-                <Input onChange={(e)=> onValueChange()}  name="name"/>
+                <Input onChange={ onValueChange}  name="name"/>
             </FormControl>
             <FormControl>
-            <InputLabel> Speciality:</InputLabel>
-                <Input onChange={(e) => onValueChange()} name="speciality"/>
+            <InputLabel> Specialty:</InputLabel>
+                <Input onChange={ onValueChange} name="specialty"/>
             </FormControl>
             
             <FormControl>
             <InputLabel> Hospital:</InputLabel>
-            <Input onChange={(e)=> onValueChange()} name="Hospital"/>
+            <Input onChange={ onValueChange} name="hospital"/>
             </FormControl>
 
             <FormControl>

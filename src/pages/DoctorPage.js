@@ -9,7 +9,7 @@
 import { useState, useEffect } from 'react';
 import { Table, TableBody, TableHead, TableRow, TableCell,styled, Button } from "@mui/material"
 
-import { getUsers, deleteUser} from "../utilities/doctorForm-api"
+import { getUsers, deleteUser } from "../utilities/doctorForm-api";
 
 import { Link } from 'react-router-dom';
 
@@ -44,9 +44,10 @@ useEffect(() => {
         getAllUsers();
     }
 
-    const getAllUsers = async () => {
-        let response = await getUsers();
-        setUsers(response.data);
+        const getAllUsers = async () => {
+                let response = await getUsers();
+                console.log(response);
+        setUsers(response);
     }
 
     return (
@@ -55,18 +56,16 @@ useEffect(() => {
                 <THead>
                     <TableCell>Id</TableCell>
                     <TableCell>Name</TableCell>
-                    <TableCell>Speciality</TableCell>
+                    <TableCell>Specialty</TableCell>
                     <TableCell>Hospital</TableCell>
-                   
-                    <TableCell></TableCell>
                 </THead>
             </TableHead>
             <TableBody>
                 {users.map((user) => (
-                    <TRow key={user.id}>
+                    <TRow key={user._id}>
                         <TableCell>{user._id}</TableCell> {/* change it to user.id to use JSON Server */}
                         <TableCell>{user.name}</TableCell>
-                        <TableCell>{user.speciality}</TableCell>
+                        <TableCell>{user.specialty}</TableCell>
                         <TableCell>{user.hospital}</TableCell>
                         <TableCell>
                             <Button color="primary" variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${user._id}`}>Edit</Button> {/* change it to user.id to use JSON Server */}

@@ -18,10 +18,10 @@ const userSchema = new Schema({
   password: {
     type: String,
     trim: true,
-    minLength: 5,
+    minLength: 2,
     required: true,
   },
-  address: { type: String, required: true },
+  address: { type: String, required: false },
 
   phone:{ type: String, required: false},
 

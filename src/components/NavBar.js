@@ -6,9 +6,6 @@ const Header = styled(AppBar)`
 background: blue
 `
 
-
-
-
 function NavBar({ user, setUser }) {
   const handleLogOut = () => {
     logOut();
@@ -17,10 +14,13 @@ function NavBar({ user, setUser }) {
   return (
     <Header>
       <Toolbar>
-      <Link to="/speciality">Specialist</Link>
-      &nbsp; | &nbsp;
-      <Link to="/doctor">Doctor</Link> <span>Welcome, {user.name}</span>{" "}
-      <Link to="" onClick={handleLogOut}>
+      <Link style={{color:"white"}} to="/speciality">Specialist</Link>
+      &nbsp; | &nbsp; 
+        <Link style={{ color: "white" }} to="/all">Doctor</Link>
+        &nbsp; | &nbsp;
+        <span>Welcome, {user.name}</span>{" "}
+        &nbsp; | &nbsp;
+      <Link style={{color:"white"}} to="" onClick={handleLogOut}>
         Logout
         </Link> 
         </Toolbar>

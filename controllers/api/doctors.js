@@ -1,9 +1,9 @@
-const User = require('../../models/doctor');
-import User from '../../models/doctor'
+const User1 = require('../../models/doctor');
+// import User from '../../models/doctor'
 
 async function index(req, res) {
     try {
-        const users = await User.find();
+        const users = await User1.find();
         res.json(users)
     } catch(error){
         res.status(400).json(error)
@@ -14,7 +14,7 @@ async function index(req, res) {
 async function create(req, res) {
     try {
         //* creating a new user
-        const user = await User.create(req.body);
+        const user = await User1.create(req.body);
         console.log(user);
         res.json(user);
     } catch (error) {
@@ -23,9 +23,10 @@ async function create(req, res) {
 
 }
 
-export const addUser = async (req, res) =>{
+async function addUser(req, res) {
     const user = req.body;
-    const newUser = new User(user);
+    console.log(user)
+    const newUser = new User1(user);
     try {
         await newUser.save()
         res.status(200).json(newUser)
@@ -34,38 +35,39 @@ export const addUser = async (req, res) =>{
     }
 }
 
-export const getUsers = async (req, res) => {
+async function getUsers(req, res) {
     try {
-        const users = await User.find({});
+        const users = await User1.find({});
         res.status(200).json(users);
     } catch(error) {
     res.status(400).json({message:error.message})
     }
 }
 
-export const getUser = async (req, res) => {
+async function getUser(req, res){
     try {
-        const users = await User.findbyId(req.params.id);
+        const users = await User1.findById(req.params.id);
         res.status(200).json(users);
     } catch(error) {
     res.status(400).json({message:error.message})
     }
 }
 
-export const editUser = async (req, res) => {
-    const users = req.body;
-    const editUser = new User(users)
-    try {
-        await User.updateOne({ _id: req.params.id }, editUser)
+async function editUser(req, res) {
+    console.log(req.body)
+    // const users = req.body;
+    // const editUser = await User1.findById(req.params.id)
+    try { 
+        await User1.findByIdAndUpdate(req.params.id, req.body)
         res.status(200).json({message:'Doc edited'})
     } catch (error) {
-        res.status(400).json({ message: error.message })
+        res.status(400).json({ message: error.message })    
     }
 }
 
-export const deleteUser = async (req, res) => {
+async function deleteUser(req, res) {
     try {
-        await User.deleteOne({ _id: req.params.id })
+        await User1.deleteOne({ _id: req.params.id })
         res.status(200).json({message:'Doc deleted'})
     } catch(error){
     res.status(409).json({message: error.message})
@@ -75,6 +77,11 @@ export const deleteUser = async (req, res) => {
 
 module.exports = {
     index,
-    create
+    create,
+    deleteUser,
+    getUser,
+    getUsers,
+    editUser,
+    addUser
     
 };

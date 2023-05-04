@@ -49,11 +49,11 @@ import { useState, useEffect } from 'react';
 
 import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getUsers, editUser } from "../utilities/doctorForm-api";
+import { getUser, editUser } from "../utilities/doctorForm-api";
 
 const initialValue = {
     name: '',
-    speciality: '',
+    specialty: '',
     hospital: '',
  
 }
@@ -67,7 +67,7 @@ const Container = styled(FormGroup)`
 
 const EditUser = () => {
     const [user, setUser] = useState(initialValue);
-    const { name, speciality, hospital } = user;
+    const { name, specialty, hospital } = user;
     const { id } = useParams();
     
     let navigate = useNavigate();
@@ -77,8 +77,9 @@ const EditUser = () => {
     }, []);
 
     const loadUserDetails = async() => {
-        const response = await getUsers(id);
-        setUser(response.data);
+        const response = await getUser(id);
+        console.log(response);
+        setUser(response);
     }
 
     const editUserDetails = async() => {
@@ -96,15 +97,15 @@ const EditUser = () => {
             <Typography variant="h4">Edit Information</Typography>
             <FormControl>
                 <InputLabel htmlFor="my-input">Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" aria-describedby="my-helper-text" />
+                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" aria-describedBy="my-helper-text" />
             </FormControl>
             <FormControl>
-                <InputLabel htmlFor="my-input">Speciality</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='speciality' value={speciality} id="my-input" aria-describedby="my-helper-text" />
+                <InputLabel htmlFor="my-input">Specialty</InputLabel>
+                <Input onChange={(e) => onValueChange(e)} name='specialty' value={specialty} id="my-input" aria-describedBy="my-helper-text" />
             </FormControl>
             <FormControl>
                 <InputLabel htmlFor="my-input">Hospital</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='hospital' value={hospital} id="my-input" aria-describedby="my-helper-text" />
+                <Input onChange={(e) => onValueChange(e)} name='hospital' value={hospital} id="my-input" aria-describedBy="my-helper-text" />
             </FormControl>
             
             <FormControl>

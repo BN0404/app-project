@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path'); // node module
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-import cors from 'cors'
+const cors = require('cors');
 // import bodyParser from 'body-parser';
 const app = express();
 // development port: 3001
@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 // Logger middleware
 app.use(logger('dev'));
 // app.use(bodyParser.urlencoded({extended:true}))
-app.use(cors()) 
+app.use(cors());
 // JSON payload middleware (for data coming from frontend functions)
 app.use(express.json());
 // Configure both serve-favicon & static middleware

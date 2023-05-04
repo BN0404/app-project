@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import DoctorPage from './pages/DoctorPage';
 import SpecialistPage from './pages/SpecialistPage';
 import { getUser } from './utilities/users-service';
-import EditDoc from './pages/EditDoc';
+import EditUser from './pages/EditDoc';
 import './App.css';
 import NewDoctorFormPage from './pages/NewDoctorFormPage';
 
@@ -25,9 +25,9 @@ function App() {
         {/* <Route path='/orders/new' element={ <NewOrderPage /> }/>
             <Route path='/orders' element={<OrderHistoryPage />} /> */}
             <Route path='/specialist' element={<SpecialistPage />} />
-            <Route path='/doctor' element={<DoctorPage />} />
+            <Route path='/all' element={<DoctorPage />} />
             <Route path='/doctors/new' element={<NewDoctorFormPage/>}/>
-            <Route path='/edit/:id' element={<EditDoc />} />
+            <Route path='/edit/:id' element={<EditUser />} />
             
       </Routes>
       </>

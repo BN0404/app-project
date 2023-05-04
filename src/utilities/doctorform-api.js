@@ -1,31 +1,39 @@
-import axios from 'axios';
+import { sendRequest } from "./sendRequest";
 
-const BASE_URL = 'http://localhost:3001';
+// const {axios} = require(axios);
 
-export const addUser = async (data) => {
-    try {
-        return await axios.post(`${URL}/add`, data)
-    } catch (error) {
-        console.log("Error", error)
-    }
+const BASE_URL = '/api/doctors';
+
+export function addUser(data) {
+    return sendRequest(`${BASE_URL}/add`, "POST", data)
+    // try {
+    //     return await axios.post(`${BASE_URL}/add`, data)
+    // } catch (error) {
+    //     console.log("Error", error)
+    // }
 }
 
-export const getUsers
- = async () => {
-    try {
-        return await axios.get(`${URL}/all`)
-    }
+export function getUsers() {
+    return sendRequest(`${BASE_URL}/all`)
+    // try {
+        // return await axios.get(`${URL}/all`)
+    // }
 
-    catch (error) {
-        console.log('Error', error)
-    }
+    // catch (error) {
+    //     console.log('Error', error)
+    // }
 }
 
-export const deleteUser = async (id) => {
-    return await axios.delete(`${BASE_URL}/${id}`);
+export function getUser(id) {
+return sendRequest(`${BASE_URL}/${id}`)
 }
 
-export const editUser = async (id, user) => {
-    return await axios.put(`${BASE_URL}/${id}`, user)
+export async function deleteUser(id) {
+    return sendRequest(`${BASE_URL}/${id}`,"DELETE")
+    // return await axios.delete(`${BASE_URL}/${id}`);
 }
 
+export async function editUser(id, user) {
+    return sendRequest(`${BASE_URL}/${id}`, "PUT", user)
+//     return await axios.put(`${BASE_URL}/${id}`, user)
+}
